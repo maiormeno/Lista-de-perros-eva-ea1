@@ -4,6 +4,9 @@ const perrosLikeContainer = document.getElementById("perrosLikeContainer");
 const perrosDislikeContainer = document.getElementById(
   "perrosDislikeContainer"
 );
+
+// Corregir el error de carga inicial
+
 perrosLikeContainer.classList.toggle("escondido");
 perrosDislikeContainer.classList.toggle("escondido");
 
