@@ -1,0 +1,21 @@
+
+  name: CI Pipeline
+
+  on:
+    push:
+      branches:
+        - develop
+    pull_request:
+      branches:
+        - main
+
+  jobs:
+    build:
+      runs-on: ubuntu-latest
+
+      steps:
+        - name: Descargar el codigo
+          uses: actions/checkout@v4
+
+        - name: Validar entorno
+          run: echo "Ejecutando pruebas para la evaluacion"
