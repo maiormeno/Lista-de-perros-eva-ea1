@@ -47,5 +47,7 @@ async function nuevoPerro() {
   }
 }
 
+// Mejorar el renderizado de la lista
+
 //Ejecución
 nuevoPerro();
