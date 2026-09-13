@@ -1,59 +1,63 @@
 # Lista de perros 🐶
 
-La idea de este proyecto es dar un pequeño repaso sobre conexiones a una API y sobre eventos. Es una pequeña aplicación web que muestra imágenes de perros aleatorias (obtenidas desde [dog.ceo](https://dog.ceo/dog-api/)) y permite marcarlas como "me gusta" o "no me gusta".
+Este repositorio contiene la base del trabajo para el pipeline de DevOps
 
-Este repositorio es la **base de trabajo** para la Evaluación Parcial N°1 de Ingeniería DevOps (DOY0101). A partir de este punto, cada pareja debe construir su propio flujo de trabajo colaborativo aplicando Git, GitHub y GitHub Actions.
-
----
-
-## 🚀 Cómo levantar el proyecto localmente
-
-No requiere instalación de dependencias. Basta con abrir `index.html` en el navegador, o servirlo con cualquier servidor estático simple, por ejemplo:
-
-```bash
-npx serve .
-```
-
----
 
 ## 🌳 Estrategia de ramificación
 
-> ✏️ **A completar por la pareja.**
-> Indiquen aquí si optaron por **GitFlow** o **Trunk-Based Development**, y justifiquen la elección considerando el tamaño del proyecto, la frecuencia de cambios esperada, y el tipo de equipo (2 personas).
+> ✏Como equipo optamos por la estrategia **GitFlow**
+> 
+> Porque GitFlow nos permite separar el desarrollo de nuevas características en ramas 'feature/' y el aislamiento de correcciones en ramas 'hotfix/'. La rama 'develop' actúa como centro de integración constante antes de fusionar los cambios a 'main'. Esto es ideal para controlar en Java.
 
 ---
 
 ## 📝 Convenciones de commits
 
-> ✏️ **A completar por la pareja.**
-> Documenten aquí el formato que van a usar para sus mensajes de commit (ej. `feat: agrega contador de likes`, `fix: corrige error en carga de imagen`), y por qué eligieron ese formato.
+> ✏Decidimos utilizar el estándar **Conventional Commits**
+> 
+> 'feat:' para incorporar nuevas funcionalidades en Java (por ejemplo, 'feat(perro): agregar endpoint de lista de razas').
+
+> 'fix:' para solucionar errores del código (por ejemplo, 'fix(servicio): corregir exception NullPointer en controlador').
+
+> 'docs:' para cambios exclusivos de la documentación
+
+> 'style:' para formatear sin cambios en la lógica del negocio.
 
 ---
 
 ## 🔀 Convenciones de naming de ramas
 
-> ✏️ **A completar por la pareja.**
-> Ejemplo de formato a definir: `feature/<nombre-descriptivo>`, `hotfix/<nombre-descriptivo>`. Expliquen brevemente el criterio que usaron para nombrar sus ramas durante el desarrollo.
-
+> ✏Definimos que para nombrar nuestras ramas deben ser descriptivas y estructuradas para identificar rápido el propósito y cambios.
+> 
+> Utilizamos prefijos claros basados en GitFlow acompañados de una descripción, facilitando la trazabilidad del código y evitando conflictos en entornos colaborativos.
+> 
+> **'main'**: Muestra la versión de producción, estable y lista para utilizarse.
+> 
+> **'develop'**: Es la rama principal donde se integra todo continuamente y se aprecian los nuevos avances.
+> 
+> **'feature/<>'**: Será utilizada para nuevas funcionalidades, como agregar validación de perros o actualizar la interfaz de la lista.
+> 
+> **'hotfix/<>'**: Es exclusiva para soluciones urgentes de errores detectados en ('main').
 ---
 
 ## 🔍 Estrategia de revisión (Pull Requests)
 
-> ✏️ **A completar por la pareja.**
-> ¿Cómo revisaron los cambios antes de fusionarlos a `develop` o `main`? ¿Qué debía cumplir un Pull Request para ser aprobado?
+> ✏ Para la calidad e integridad del código, establecimos estos requisitos:
+> - Ningún cambio ingresa directamente a 'main' y/o 'develop'.
+> - Cada cambio requiere la apertura de un **Pull Request**.
+> - Se revisa el código entre los integrantes.
+> - En la fusión, el pipeline de **Github Actions** debe ejecutarse sin fallas.
+
 
 ---
 
 ## ⚙️ Automatización (CI/CD)
 
-> ✏️ **A completar por la pareja.**
-> Este proyecto no incluye ningún workflow de GitHub Actions todavía — es parte de su trabajo diseñarlo e implementarlo.
->
-> **Objetivo sugerido:** usar este repositorio como si tuviera un entorno de *staging* (rama `develop`) y uno de *producción* (rama `main`), automatizando la integración de cambios entre ambos. Por ejemplo:
-> - Al hacer `push` a `develop`: validar que el código no tenga errores evidentes (HTML/CSS/JS)
-> - Al abrir un Pull Request hacia `main`: ejecutar una verificación o despliegue automático
->
-> Documenten aquí qué automatizaron, por qué, y qué rol cumple dentro de un proceso CI/CD real.
+> ✏️ Configuramos un flujo de integración continua (CI) a través de **Github Actions**
+> 
+> -**Triggers:** Se activan en cada 'push' hacia 'develop' y con cada 'pull_request' a 'main'.
+> 
+> -**Acciones:** Configuran el entorno de Java y descarga las dependencias con Maven.
 
 ---
 
@@ -61,20 +65,20 @@ npx serve .
 
 ```
 Lista-de-perros/
+├── .github/
+│   └── workflows/
+│       └── ci.yml
 ├── index.html
 ├── index.js
 ├── style.css
 └── README.md
 ```
-
-> ✏️ **A completar por la pareja.**
-> Si agregan nuevas carpetas o archivos durante el desarrollo (ej. `.github/workflows/`), actualicen este diagrama.
-
 ---
 
 ## 👥 Autores
 
-- Integrante 1 — nombre
-- Integrante 2 — nombre
+- Integrante 1 — Maira Ormeño
+- Integrante 2 — Michelle Serrano
+- Integrante 3 — Valentina Ruiz
 
 *Proyecto original: repaso de conexión a API y manejo de eventos en JavaScript. Adaptado como base para la Evaluación Parcial N°1, DOY0101 — Ingeniería DevOps.*
