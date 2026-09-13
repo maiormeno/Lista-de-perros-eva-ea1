@@ -33,6 +33,7 @@ function rankearPerro(ranking) {
   }
   nuevoPerro();
 }
+// Cambio para la validación de perros
 
 async function nuevoPerro() {
   perroActualElement.classList.toggle("escondido", true);
